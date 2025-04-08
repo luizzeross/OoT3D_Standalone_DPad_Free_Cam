@@ -2,12 +2,16 @@
 
 This project allows all 3DS systems to control the camera in The Legend of Zelda: Ocarina of Time 3D with use of the d-pad. It also add c-stick support as well.
 
-This project is a fork of Roberto-Nessy's OoT3D_Standalone_Free_Cam with added d-pad support. Since the d-pad is almost useless in the entire game, I came with this idea to enable non New 3DS systems to control the camera as well.
+This project is a fork of **Roberto-Nessy**'s **OoT3D_Standalone_Free_Cam** with added d-pad support. Since the d-pad is almost useless in the entire game, I came with this idea to enable non-New 3DS systems to control the camera as well.
 
 This project is still a WIP, and has some issues like:
 
-* Map hides while using d-pad down.
+* The mini-map hides while using d-pad down.
 * Do not have JPN region support.
+* Since I only had the USA catridge here, the EU patch is not tested.
+
+Future features planned (problably never, since I don't have time):
+* Remap the show/hide mini-map button to SELECT (START and SELECT does the same in this game)
 
 # How to Use:
 * Find the patch files inside the "Patch Files" folder in this repository. They're divided by regional version of OoT3D (USA/EUR/JP) and by platform, so choose the correct ones.
