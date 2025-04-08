@@ -290,22 +290,22 @@ void Camera_FreeCamUpdate(Vec3s* out, Camera* camera) {
 
         if (rInputCtx.cur.d_left) {
             yaw -= -120 * speed * (((controls & 1) ^ gSaveContext.masterQuestFlag) ? -1 : 1);
-            //Draw_DrawFormattedStringTop(10, alertSpd ? 20 : 10, COLOR_WHITE, "GADES BLADE");
+            //Draw_DrawFormattedStringTop(10, alertSpd ? 20 : 10, COLOR_WHITE, "LEFT");
         }
 
         if (rInputCtx.cur.d_right) {
             yaw -= 120 * speed * (((controls & 1) ^ gSaveContext.masterQuestFlag) ? -1 : 1);
-            //Draw_DrawFormattedStringTop(10, alertSpd ? 20 : 10, COLOR_WHITE, "REI NINTENDISTA");
+            //Draw_DrawFormattedStringTop(10, alertSpd ? 20 : 10, COLOR_WHITE, "RIGHT");
         }
 
         if (rInputCtx.cur.d_up) {
             pitch = Clamp(pitch + 120 * speed * ((controls & 2) ? -1 : 1));
-            //Draw_DrawFormattedStringTop(10, alertSpd ? 20 : 10, COLOR_WHITE, "LAVOS DE CUECA");
+            //Draw_DrawFormattedStringTop(10, alertSpd ? 20 : 10, COLOR_WHITE, "UP");
         }
 
         if (rInputCtx.cur.d_down) {
             pitch = Clamp(pitch + (-120) * speed * ((controls & 2) ? -1 : 1));
-            //Draw_DrawFormattedStringTop(10, alertSpd ? 20 : 10, COLOR_WHITE, "FABRICIO ZE BUTINA");
+            //Draw_DrawFormattedStringTop(10, alertSpd ? 20 : 10, COLOR_WHITE, "DOWN");
         }
 
         if (rInputCtx.cStick.dx * rInputCtx.cStick.dx + rInputCtx.cStick.dy * rInputCtx.cStick.dy > 900) {
