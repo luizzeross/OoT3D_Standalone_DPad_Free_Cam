@@ -249,6 +249,10 @@ u8 Camera_FreeCamEnabled(Camera* camera) {
         freeCamEnabled = 1;
     }
 
+    if (rInputCtx.cur.d_left || rInputCtx.cur.d_right || rInputCtx.cur.d_up || rInputCtx.cur.d_down) {
+        freeCamEnabled = 1;
+    }
+
     // Titlescreen or cutscene or no player or targeting or first person or cutscene or horse or crawlspace or special
     // camera state/setting (MK balcony, chu bowling, static, rotating, hedge maze, GF cells, shops, back alley)
     if (!IsInGameOrBossChallenge() || camera->globalCtx->sceneNum == 0x45 || camera != &camera->globalCtx->mainCamera || !camera->player ||
@@ -282,6 +286,27 @@ void Camera_FreeCamUpdate(Vec3s* out, Camera* camera) {
         camera->playerPosRot = camera->player->actor.world;
         at = eye.pos = camera->playerPosRot.pos;
         at.y = eye.pos.y += ((gSaveContext.linkAge) ? 38 : 50) * ((camera->player->stateFlags1 & 0x00002000) ? 0.5 : 1);
+
+
+        if (rInputCtx.cur.d_left) {
+            yaw -= -120 * speed * (((controls & 1) ^ gSaveContext.masterQuestFlag) ? -1 : 1);
+            //Draw_DrawFormattedStringTop(10, alertSpd ? 20 : 10, COLOR_WHITE, "GADES BLADE");
+        }
+
+        if (rInputCtx.cur.d_right) {
+            yaw -= 120 * speed * (((controls & 1) ^ gSaveContext.masterQuestFlag) ? -1 : 1);
+            //Draw_DrawFormattedStringTop(10, alertSpd ? 20 : 10, COLOR_WHITE, "REI NINTENDISTA");
+        }
+
+        if (rInputCtx.cur.d_up) {
+            pitch = Clamp(pitch + 120 * speed * ((controls & 2) ? -1 : 1));
+            //Draw_DrawFormattedStringTop(10, alertSpd ? 20 : 10, COLOR_WHITE, "LAVOS DE CUECA");
+        }
+
+        if (rInputCtx.cur.d_down) {
+            pitch = Clamp(pitch + (-120) * speed * ((controls & 2) ? -1 : 1));
+            //Draw_DrawFormattedStringTop(10, alertSpd ? 20 : 10, COLOR_WHITE, "FABRICIO ZE BUTINA");
+        }
 
         if (rInputCtx.cStick.dx * rInputCtx.cStick.dx + rInputCtx.cStick.dy * rInputCtx.cStick.dy > 900) {
             // Invert X input in mirror world
