@@ -24,7 +24,7 @@ Future features planned (problably never, since I don't have time):
 |---|---|---|
 | USA | /luma/titles/0004000000033500 | |
 | JP  | /luma/titles/0004000000033400 | crashes |
-| EUR | /luma/titles/0004000000033600 | not testes yet |
+| EUR | /luma/titles/0004000000033600 | not tested yet |
 
 * Hold Select while powering on the console to launch the Luma3DS menu. Turn on "Enable game patching". You should only need to do this once, unless if you disable game patching in the future.
 * It should work now! If not, you likely need to use a different version of Luma3DS.
